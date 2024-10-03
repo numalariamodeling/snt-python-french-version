@@ -49,13 +49,6 @@ function loadContent(page) {
             </code></pre>
             <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
 
-# Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
-            </code></pre>
-            <p>This step makes the functions from these libraries available for use in your script.</p>
-
             <h3>Step 3: Import Shapefiles</h3>
             <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
