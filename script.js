@@ -27,24 +27,28 @@ function loadContent(page) {
 
         `,
         shapefiles: `
-        
-            <h2>A. Data Assembly and Manangement>A.1 Shapefiles</h2>
-            <h3>Step by step approach</h3>
-            <p>This section explains the workflow of importing and managing shapefiles using R.</p>
+            <h2>A. Assemblage et gestion des données > A.1 fichiers de forme</h2>
+            <h3>Approche étape par étape</h3>
+            <p>Cette section explique le flux de travail pour importer et gérer des shapefiles en utilisant R.</p>
 
-            <h3>Step 1: Install Necessary Libraries</h3>
-            <p>Before starting, ensure you have the required R packages installed. This can be done using the following code:</p>
+            <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
+            <p>Avant de commencer, assurez-vous d'avoir installé les packages R requis. Cela peut être fait en utilisant le code suivant :</p>
             <pre><code>
-# Install necessary libraries
-install.packages(c("sf", "ggplot2", "dplyr"))
+            # Installer les bibliothèques nécessaires
+            install.packages(c("sf", "ggplot2", "dplyr"))
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+            <p>Ce code installe le package <code>sf</code> pour manipuler des données spatiales, <code>ggplot2</code> pour la visualisation des données et <code>dplyr</code> pour la manipulation des données.</p>
 
-            
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
+            <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
+            <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement R :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+            # Charger les bibliothèques nécessaires
+            library(sf)
+            library(dplyr)
+            library(ggplot2)
+            </code></pre>
+            <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
 
-            <h3>Step 2: Load Necessary Libraries</h3>
-            <p>After installing the libraries, you need to load them into your R environment:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Load necessary libraries
 library(sf)
 library(dplyr)
