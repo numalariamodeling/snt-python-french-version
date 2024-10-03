@@ -28,6 +28,28 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
             <h3>Scope</h3>
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
+
+
+
+            <h3 class="sidebar-title">Version : 3 octobre 2024 </h3>
+            <h3 class="sidebar-title">Auteurs : Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin </h3>
+            <h2>Aperçu</h2>
+            <h3>Motivation</h3>
+            <p>SNT est là pour rester : de nombreux NMCP ont trouvé cela utile et continuent à l'adopter et à le développer davantage pour leurs besoins analytiques. Depuis 2019, plusieurs personnes ont soutenu les parties d'analyse de SNT. Dans la plupart des cas, les individus ont construit leur propre code dans une variété de langages (Stata, R et Python), construisant parfois sur le code précédent d'autres et parfois redéveloppant de manière indépendante.
+            À mesure que SNT mûrit, davantage d'assurance qualité est nécessaire pour que les NMCP puissent être confiants que l'analyse qu'ils utilisent pour éclairer leurs décisions est de haute qualité, quel que soit l'analyste qui les soutient. Le déploiement continu de SNT signifie également que l'analyse peut devenir plus efficace si les analystes sont mieux en mesure de s'appuyer sur le travail des autres plutôt que d'être tentés de réinventer ce qui a déjà été développé. Enfin, l'analyse SNT peut devenir beaucoup plus accessible s'il existe une ressource commune disponible pour aider ceux qui ont des compétences en codage intermédiaires à accéder rapidement aux connaissances collectives de la communauté des analystes SNT.</p>
+
+            <h3>Objectifs</h3>
+            <p>Nous allons construire une bibliothèque de code pour l'analyse SNT afin de :
+            <p>1. Améliorer la qualité et la reproductibilité de l'analyse SNT en veillant à ce que les analystes utilisent des approches similaires et correctes.</p>
+            <p>2. Améliorer l'efficacité de l'analyse SNT en minimisant la duplication des efforts.</p>
+            <p>3. Promouvoir l'accessibilité de l'analyse SNT en abaissant les barrières à l'entrée.</p>
+
+            <h3>Public cible</h3>
+            <p>Quiconque effectuant ce type de travail. Nous supposons une certaine connaissance de base de R, une certaine compréhension des données et un lien solide avec le NMCP.</p>
+
+            <h3>Portée</h3>
+            <p>Toutes les étapes d'analyse de SNT jusqu'à, mais n'incluant pas, la modélisation mathématique ; certaines analyses connexes.</p>
+
         `,
         shapefiles: `
         
