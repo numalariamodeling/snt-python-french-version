@@ -26,6 +26,8 @@ function loadContent(page) {
             <p>Toutes les étapes d'analyse de SNT jusqu'à, mais n'incluant pas, la modélisation mathématique ; certaines analyses connexes.</p>
 
         `,
+
+
         shapefiles: `
             <h2>A. Assemblage et gestion des données > A.1 fichiers de forme</h2>
             <h3>Approche étape par étape</h3>
@@ -49,105 +51,105 @@ library(ggplot2)
             </code></pre>
             <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
 
-            <h3>Step 3: Import Shapefiles</h3>
-            <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Import Shapefiles
+            <h3>Étape 3 : Importer des Shapefiles</h3>
+            <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>st_read</code> du package <code>sf</code>. Voici une fonction pour le faire :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+# Importer des Shapefiles
 import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
+    shapefile <- st_read(filepath)  # Lire le shapefile
+    return(shapefile)  # Retourner le shapefile chargé
 }
             </code></pre>
-            <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
+            <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le renvoie en tant qu'objet spatial.</p>
 
-            <h3>Step 4: Rename and Match Names</h3>
-            <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Rename and Match Names
+            <h3>Étape 4 : Renommer et faire correspondre les noms</h3>
+            <p>Parfois, les colonnes de votre shapefile doivent être renommées pour plus de clarté ou pour correspondre à d'autres ensembles de données. Vous pouvez le faire comme suit :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+# Renommer et faire correspondre les noms
 rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
+    colnames(shapefile) <- new_names  # Renommer les colonnes
+    return(shapefile)  # Retourner le shapefile renommé
 }
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+            <p>Cette fonction prend un shapefile et un vecteur de nouveaux noms, renommant les colonnes en conséquence.</p>
 
-            <h3>Step 5: Link Shapefiles to Relevant Scales</h3>
-            <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Link Shapefiles to Relevant Scales
+            <h3>Étape 5 : Lier les Shapefiles aux Échelles Pertinentes</h3>
+            <p>Liez votre shapefile à des échelles ou des métadonnées pertinentes en le fusionnant avec un autre cadre de données :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+# Lier les Shapefiles aux Échelles Pertinentes
 link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
     linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
+        left_join(scales_df, by = link_col)  # Fusionner le shapefile avec les échelles
+    return(linked_shapefile)  # Retourner le shapefile lié
 }
             </code></pre>
-            <p>This function performs a left join between the shapefile and a data frame containing scale information based on a specified linking column.</p>
+            <p>Cette fonction effectue une jointure à gauche entre le shapefile et un cadre de données contenant des informations sur les échelles, en fonction d'une colonne de liaison spécifiée.</p>
 
-            <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
-            <p>Finally, you can visualize the shapefile using <code>ggplot2</code>. Here’s a function to do that:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-# Visualizing Shapefiles and Making Basic Maps
+            <h3>Étape 6 : Visualiser les Shapefiles et Créer des Cartes de Base</h3>
+            <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>ggplot2</code>. Voici une fonction pour cela :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+# Visualiser les Shapefiles et Créer des Cartes de Base
 visualize_shapefile <- function(shapefile) {
     ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
+        geom_sf(aes(fill = some_variable)) +  # Visualiser le shapefile
         theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
+        labs(title = "Visualisation du Shapefile", fill = "Variable")  # Définir le titre et la légende
 }
-            </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+            <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>some_variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
 
-            <h3>Full code</h3>
+            <h3>Code complet</h3>
             <pre id="codeBlock">
                 <code>
 
-# Install  necessary libraries
+# Installer les bibliothèques nécessaires
 install.packages(c("sf", "ggplot2", "dplyr"))
 
-# Load necessary libraries
+# Charger les bibliothèques nécessaires
 library(sf)
 library(dplyr)
 library(ggplot2)
 
-# Import Shapefiles
+# Importer des Shapefiles
 import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
+    shapefile <- st_read(filepath)  # Lire le shapefile
+    return(shapefile)  # Retourner le shapefile chargé
 }
 
-# Rename and Match Names
+# Renommer et faire correspondre les noms
 rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
+    colnames(shapefile) <- new_names  # Renommer les colonnes
+    return(shapefile)  # Retourner le shapefile renommé
 }
 
-# Link Shapefiles to Relevant Scales
+# Lier les Shapefiles aux Échelles Pertinentes
 link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
     linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
+        left_join(scales_df, by = link_col)  # Fusionner le shapefile avec les échelles
+    return(linked_shapefile)  # Retourner le shapefile lié
 }
 
-# Visualizing Shapefiles and Making Basic Maps
+# Visualiser les Shapefiles et Créer des Cartes de Base
 visualize_shapefile <- function(shapefile) {
     ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
+        geom_sf(aes(fill = some_variable)) +  # Visualiser le shapefile
         theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
+        labs(title = "Visualisation du Shapefile", fill = "Variable")  # Définir le titre et la légende
 }
 
 
                 </code>
-                <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
+                <button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici -->
             </pre>
            
         `,
         hf: `
-            <h2>A. Data Assembly and Management>A.2 Health Facilities</h2>
-            <h3>Step by step approach.</h3>
+            <h2>A. Assemblage et gestion des données > A.2 Établissements de santé</h2>
+            <h3>Approche étape par étape.</h3>
         `,
         quartoExample: `
-            <h2>Quarto Example</h2>
-            <p>This is an example of Quarto.</p>
+            <h2>Exemple Quarto</h2>
+            <p>Ceci est un exemple de Quarto.</p>
         `,
     };
 
