@@ -3,105 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Library for Subnational Tailoring</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Bibliothèque de Code pour le Tailoring Subnational</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
 </head>
 <body>
 
 <div class="container">
     <div class="sidebar">
         <div class="sidebar-header">
-            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Numalaria Logo" class="sidebar-logo">
-            <h2 class="sidebar-title">Code Library for Subnational Tailoring</h2>
+            <img src="https://raw.githubusercontent.com/numalariamodeling/snt-library/00f5d017420687693cc53237562750b8abfba6ed/numalaria_logo.png" alt="Logo Numalaria" class="sidebar-logo">
+            <h2 class="sidebar-title">Bibliothèque de Code pour le Tailoring Subnational</h2>
         </div>
 
-        
-
-        <input type="text" class="search-bar" placeholder="Search..." maxlength="15"> <!-- Shortened search bar -->
+        <input type="text" class="search-bar" placeholder="Recherche..." maxlength="15"> <!-- Barre de recherche raccourcie -->
 
         <div class="menu">
             <p class="menu-header">
                 <a href="https://numalariamodeling.github.io/snt-code-library-english-version/" class="menu-link">
-                    <span class="menu-text">French</span>
+                    <span class="menu-text">Anglais</span>
                 </a>
             </p>
         </div>
 
         <div class="menu">
             <p class="menu-header">
-                <a href="#Overview" class="menu-link" onclick="loadContent('overview')">
-                    <span class="menu-text">Overview</span>
+                <a href="#Aperçu" class="menu-link" onclick="loadContent('overview')">
+                    <span class="menu-text">Aperçu</span>
                 </a>
             </p>
-
         </div>
 
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">A. Data Assembly and Management</span>
+                <span class="menu-text">A. Assemblage et Gestion des Données</span>
                 <span class="menu-indicator">></span>
             </p>
             <ul class="submenu">
-                <li><a href="#A.1 Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a></li>
-                <li><a href="#A.2 Health Facilities" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li> 
-                <li><a href="#A.3 Routine Case Data from DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
-                <li><a href="#A.4 DHS Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
-                <li><a href="#A.5 Population Data" class="menu-link" onclick="selectLink(this); loadContent('pop')"><span class="link-text">A.5 Population Data</span></a></li>
-                <li><a href="#A.6 Climate Data" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Climate Data</span></a></li> 
-                <li><a href="#A.7 LMIS Data" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 LMIS Data</span></a></li>
-                <li><a href="#A.8 Modeled Data" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Modeled Data</span></a></li> 
-                
+                <li><a href="#A.1 Fichiers de Forme" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">A.1 Fichiers de Forme</span></a></li>
+                <li><a href="#A.2 Établissements de Santé" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Établissements de Santé</span></a></li> 
+                <li><a href="#A.3 Données de Cas Routinières de DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Données de Cas Routinières de DHIS2</span></a></li>
+                <li><a href="#A.4 Données de l'EEDS" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 Données de l'EEDS</span></a></li>
+                <li><a href="#A.5 Données de Population" class="menu-link" onclick="selectLink(this); loadContent('pop')"><span class="link-text">A.5 Données de Population</span></a></li>
+                <li><a href="#A.6 Données Climatiques" class="menu-link" onclick="selectLink(this); loadContent('climate')"><span class="link-text">A.6 Données Climatiques</span></a></li> 
+                <li><a href="#A.7 Données LMIS" class="menu-link" onclick="selectLink(this); loadContent('lmis')"><span class="link-text">A.7 Données LMIS</span></a></li>
+                <li><a href="#A.8 Données Modélisées" class="menu-link" onclick="selectLink(this); loadContent('model')"><span class="link-text">A.8 Données Modélisées</span></a></li> 
             </ul>
         </div>
 
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">B. Epidemiological Stratification</span>
+                <span class="menu-text">B. Stratification Épidémiologique</span>
                 <span class="menu-indicator">></span>
             </p>
             <ul class="submenu">
-                <li><a href="#B.1 Reporting Rate per Variable" class="menu-link" onclick="selectLink(this); loadContent('repoting-rate')"><span class="link-text">B.1 Reporting Rate per Variable</span></a></li> 
-                <li><a href="#B.2 Group and Merge Data Frame" class="menu-link" onclick="selectLink(this); loadContent('group-merge-df')"><span class="link-text">B.2 Group and Merge Data Frame</span></a></li> 
-                <li><a href="#B.3 Crude Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('crude-indcidence')"><span class="link-text">B.3 Crude Incidence by Year</span></a></li> 
-                <li><a href="#B.4 Adjusted Incidence by Year" class="menu-link" onclick="selectLink(this); loadContent('adjusted-incidence')"><span class="link-text">B.4 Adjusted Incidence by Year</span></a></li> 
-                <li><a href="#B.5 Option to Select Incidence" class="menu-link" onclick="selectLink(this); loadContent('option-incidence')"><span class="link-text">B.5 Option to Select Incidence</span></a></li> 
-                <li><a href="#B.6 Risk Categorization" class="menu-link" onclick="selectLink(this); loadContent('risk-categorization')"><span class="link-text">B.6 Risk Categorization</span></a></li> 
+                <li><a href="#B.1 Taux de Reporting par Variable" class="menu-link" onclick="selectLink(this); loadContent('repoting-rate')"><span class="link-text">B.1 Taux de Reporting par Variable</span></a></li> 
+                <li><a href="#B.2 Regrouper et Fusionner le Cadre de Données" class="menu-link" onclick="selectLink(this); loadContent('group-merge-df')"><span class="link-text">B.2 Regrouper et Fusionner le Cadre de Données</span></a></li> 
+                <li><a href="#B.3 Incidence Brute par Année" class="menu-link" onclick="selectLink(this); loadContent('crude-indcidence')"><span class="link-text">B.3 Incidence Brute par Année</span></a></li> 
+                <li><a href="#B.4 Incidence Ajustée par Année" class="menu-link" onclick="selectLink(this); loadContent('adjusted-incidence')"><span class="link-text">B.4 Incidence Ajustée par Année</span></a></li> 
+                <li><a href="#B.5 Option de Sélectionner l'Incidence" class="menu-link" onclick="selectLink(this); loadContent('option-incidence')"><span class="link-text">B.5 Option de Sélectionner l'Incidence</span></a></li> 
+                <li><a href="#B.6 Catégorisation des Risques" class="menu-link" onclick="selectLink(this); loadContent('risk-categorization')"><span class="link-text">B.6 Catégorisation des Risques</span></a></li> 
             </ul>
         </div>
 
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">C. Stratification of Other Determinants</span>
+                <span class="menu-text">C. Stratification d'Autres Déterminants</span>
                 <span class="menu-indicator">></span>
             </p>
             <ul class="submenu">
-                <li><a href="#C.1 Access to Care" class="menu-link" onclick="selectLink(this); loadContent('access-to-care')"><span class="link-text">C.1 Access to Care</span></a></li> 
-                <li><a href="#C.2 Seasonality" class="menu-link" onclick="selectLink(this); loadContent('seasonality')"><span class="link-text">C.2 Seasonality</span></a></li> 
+                <li><a href="#C.1 Accès aux Soins" class="menu-link" onclick="selectLink(this); loadContent('access-to-care')"><span class="link-text">C.1 Accès aux Soins</span></a></li> 
+                <li><a href="#C.2 Saisonnalité" class="menu-link" onclick="selectLink(this); loadContent('seasonality')"><span class="link-text">C.2 Saisonnalité</span></a></li> 
             </ul>
         </div>
 
         <div class="menu">
             <p class="menu-header" onclick="toggleMenu(this)">
-                <span class="menu-text">D. Review of Past Interventions</span>
+                <span class="menu-text">D. Revue des Interventions Passées</span>
                 <span class="menu-indicator">></span>
             </p>
             <ul class="submenu">
-                
-                <li><a href="#D.1 EPI Coverage and Dropout Rate" class="menu-link" onclick="selectLink(this); loadContent('epi')"><span class="link-text">D.1 EPI Coverage and Dropout Rate</span></a></li> 
-                <li><a href="#D.2 IPTp and ANC Coverage" class="menu-link" onclick="selectLink(this); loadContent('iptp')"><span class="link-text">D.2 IPTp and ANC Coverage</span></a></li>    
-                <li><a href="#D.3 PMC (Perennial Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pmc')"><span class="link-text">D.3 PMC (Perennial Malaria Chemoprevention)</span></a></li>  
-                <li><a href="#D.4 SMC (Seasonal Malaria Chemoprevention" class="menu-link" onclick="selectLink(this); loadContent('smc')"><span class="link-text">D.4 SMC (Seasonal Malaria Chemoprevention</span></a></li> 
-                <li><a href="#D.5 Malaria Vaccine" class="menu-link" onclick="selectLink(this); loadContent('vaccine')"><span class="link-text">D.5 Malaria Vaccine</span></a></li> 
-                <li><a href="#D.6 ITN Coverage, Ownership, Access, Usage, and Type" class="menu-link" onclick="selectLink(this); loadContent('itn')"><span class="link-text">D.6 ITN Coverage, Ownership, Access, Usage, and Type</span></a></li> 
-                <li><a href="#D.7 IRS (Indoor Residual Spraying)" class="menu-link" onclick="selectLink(this); loadContent('irs')"><span class="link-text">D.7 IRS (Indoor Residual Spraying)</span></a></li> 
-                <li><a href="#D.8 MDA (Mass Drug Administration)" class="menu-link" onclick="selectLink(this); loadContent('mda')"><span class="link-text">D.8 MDA (Mass Drug Administration)</span></a></li> 
-                <li><a href="#D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)" class="menu-link" onclick="selectLink(this); loadContent('iptsc')"><span class="link-text">D.9 IPTsc (Intermittent Preventive Treatment of Malaria in School-aged Children)</span></a></li> 
-                <li><a href="#D.10 PDMC (Post-discharge Malaria Chemoprevention)" class="menu-link" onclick="selectLink(this); loadContent('pdmc')"><span class="link-text">D.10 PDMC (Post-discharge Malaria Chemoprevention)</span></a></li> 
-                <li><a href="#D.11 LSM (Larval Source Management)" class="menu-link" onclick="selectLink(this); loadContent('lsm')"><span class="link-text">D.11 LSM (Larval Source Management)</span></a></li> 
-                <li><a href="#D.12 Assessing the Quality of Case Management" class="menu-link" onclick="selectLink(this); loadContent('assessing-quality-management')"><span class="link-text">D.12 Assessing the Quality of Case Management</span></a></li> 
+                <li><a href="#D.1 Couverture EPI et Taux d'Abandon" class="menu-link" onclick="selectLink(this); loadContent('epi')"><span class="link-text">D.1 Couverture EPI et Taux d'Abandon</span></a></li> 
+                <li><a href="#D.2 Couverture IPTp et ANC" class="menu-link" onclick="selectLink(this); loadContent('iptp')"><span class="link-text">D.2 Couverture IPTp et ANC</span></a></li>    
+                <li><a href="#D.3 PMC (Chimoprévention Malarique Pérénniale)" class="menu-link" onclick="selectLink(this); loadContent('pmc')"><span class="link-text">D.3 PMC (Chimoprévention Malarique Pérénniale)</span></a></li>  
+                <li><a href="#D.4 SMC (Chimoprévention Malarique Saisonnière)" class="menu-link" onclick="selectLink(this); loadContent('smc')"><span class="link-text">D.4 SMC (Chimoprévention Malarique Saisonnière)</span></a></li> 
+                <li><a href="#D.5 Vaccin contre le Paludisme" class="menu-link" onclick="selectLink(this); loadContent('vaccine')"><span class="link-text">D.5 Vaccin contre le Paludisme</span></a></li> 
+                <li><a href="#D.6 Couverture ITN, Propriété, Accès, Utilisation et Type" class="menu-link" onclick="selectLink(this); loadContent('itn')"><span class="link-text">D.6 Couverture ITN, Propriété, Accès, Utilisation et Type</span></a></li> 
+                <li><a href="#D.7 IRS (Pulvérisation Résiduelle Intérieure)" class="menu-link" onclick="selectLink(this); loadContent('irs')"><span class="link-text">D.7 IRS (Pulvérisation Résiduelle Intérieure)</span></a></li> 
+                <li><a href="#D.8 Autres Interventions" class="menu-link" onclick="selectLink(this); loadContent('other-interventions')"><span class="link-text">D.8 Autres Interventions</span></a></li> 
+                <li><a href="#D.9 Réactions Épidémiques" class="menu-link" onclick="selectLink(this); loadContent('epidemic-responses')"><span class="link-text">D.9 Réactions Épidémiques</span></a></li> 
+                <li><a href="#D.10 Collaboration et Coordination" class="menu-link" onclick="selectLink(this); loadContent('collaboration-coordination')"><span class="link-text">D.10 Collaboration et Coordination</span></a></li> 
+                <li><a href="#D.11 Surveillances et Évaluations" class="menu-link" onclick="selectLink(this); loadContent('surveillance-evaluations')"><span class="link-text">D.11 Surveillances et Évaluations</span></a></li> 
+                <li><a href="#D.12 Recommandations et Bonnes Pratiques" class="menu-link" onclick="selectLink(this); loadContent('recommendations-best-practices')"><span class="link-text">D.12 Recommandations et Bonnes Pratiques</span></a></li> 
             </ul>
         </div>
-    </div>
+
+    </div>    
     <div class="main-content">
         <div id="content">
             <!-- Overview content will be loaded here -->
@@ -109,7 +105,6 @@
     </div>
 </div>
 
-<script src="script.js"></script> <!-- Link to the JavaScript file -->
+<script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
 </body>
-</html>   
-
+</html>
