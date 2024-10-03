@@ -34,18 +34,18 @@ function loadContent(page) {
             <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
             <p>Avant de commencer, assurez-vous d'avoir installé les packages R requis. Cela peut être fait en utilisant le code suivant :</p>
             <pre><code>
-            # Installer les bibliothèques nécessaires
-            install.packages(c("sf", "ggplot2", "dplyr"))
+# Installer les bibliothèques nécessaires
+install.packages(c("sf", "ggplot2", "dplyr"))
             </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
             <p>Ce code installe le package <code>sf</code> pour manipuler des données spatiales, <code>ggplot2</code> pour la visualisation des données et <code>dplyr</code> pour la manipulation des données.</p>
 
             <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
             <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement R :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
-            # Charger les bibliothèques nécessaires
-            library(sf)
-            library(dplyr)
-            library(ggplot2)
+# Charger les bibliothèques nécessaires
+library(sf)
+library(dplyr)
+library(ggplot2)
             </code></pre>
             <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
 
