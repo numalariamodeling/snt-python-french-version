@@ -157,7 +157,7 @@ visualize_shapefile <- function(shapefile) {
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.2 Health Facilities</h3>
+            <h3>A. Assemblage et gestion des données>A.2 Établissements de santé</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -292,7 +292,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.3 Routine Case Data from DHIS2</h3>
+            <h3>A. Assemblage et gestion des données>A.3 Données de cas routiniers de DHIS2</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -427,7 +427,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.4 DHS Data</h3>
+            <h3>A. Assemblage et gestion des données>A.4 Données DHS</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -562,7 +562,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.5 Population Data</h3>
+            <h3>A. Assemblage et gestion des données>A.5 Données de population</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -696,7 +696,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.6 Climate Data</h3>
+            <h3>A. Assemblage et gestion des données>A.6 Données climatiques</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -831,7 +831,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.7 LMIS Data</h3>
+            <h3>A. Data Assembly and Manangement>A.7 Données LMIS</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -966,7 +966,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.8 Modeled Data</h3>
+            <h3>A. Assemblage et gestion des données>A.8 Données modélisées</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
