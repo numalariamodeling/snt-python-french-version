@@ -2175,7 +2175,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.1 EPI Coverage and Dropout Rate</h3>
+            <h3>D. Examen des interventions passées>D.1 Couverture et taux d'abandon du PEV</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2309,7 +2309,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.2 IPTp and ANC Coverage</h3>
+            <h3>D. Examen des interventions passées>D.2 Couverture du TPIg et des CPN</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2443,7 +2443,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.3 PMC (Perennial Malaria Chemoprevention)</h3>
+            <h3>D. Review of Past Interventions>D.3 CPM (Chimioprévention du paludisme pérenne)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2576,7 +2576,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.4 SMC (Seasonal Malaria Chemoprevention)</h3>
+            <h3>D. Review of Past Interventions>D.4 CPS (Chimioprévention du paludisme saisonnier)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2712,7 +2712,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.5 Malaria Vaccine</h3>
+            <h3>D. Review of Past Interventions>D.5 Vaccin contre le paludisme</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2846,7 +2846,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.6 ITN Coverage, Ownership, Access, Usage and Type</h3>
+            <h3>D. Review of Past Interventions>D.6 Couverture, possession, accès, utilisation et type de MII</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
