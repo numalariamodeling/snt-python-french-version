@@ -1906,7 +1906,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>C. Stratification of Other Determinants>C.1 Access to Care</h3>
+            <h3>C. Stratification d'autres déterminants>C.1 Accès aux soins</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2040,7 +2040,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>C. Stratification of Other Determinants>C.2 Seasonality</h3>
+            <h3>C. Stratification d'autres déterminants>C.2 Saisonnalité</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
