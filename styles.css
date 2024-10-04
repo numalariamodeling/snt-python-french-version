@@ -85,6 +85,29 @@ pre {
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
+    width: 700px;
+    
+    
+    
+}
+
+
+/* Apply to all paragraphs before or after the <pre> block */
+pre + p,
+pre ~ p,
+p + pre,
+p ~ pre {
+    width: 700px;
+    margin:10px 0;
+}
+
+/* Apply to all headings before or after the <pre> block */
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
+pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
+h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
+    width: 700px;
+    margin:10px 0;
 }
 
 .copy-button {
@@ -150,4 +173,41 @@ button {
     margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
 }
 
+
+
+
+
+
+.text-button {
+    background: none;                /* Remove background */
+    border: none;                    /* Remove border */
+    color: blue;                     /* Make the text blue */
+    text-decoration: underline;       /* Underline text */
+    cursor: pointer;                 /* Show pointer on hover */
+    font-size: 16px;                 /* Adjust font size */
+    padding: 0;                      /* Remove default padding */
+    margin-right: 10px;              /* Space between buttons */
+}
+
+.text-button:last-child {
+    margin-right: 0;                 /* No margin on the last button */
+}
+
+.text-button:hover {
+    color: darkblue;                 /* Darker shade when hovering */
+    text-decoration: none;           /* Remove underline on hover */
+}
+
+.fixed-buttons {
+
+    display: flex;         /* Use flexbox layout */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;  
+    position: fixed;                 /* Keep buttons fixed */
+    top: 10px;                       /* Adjust as needed */
+    right: 20px;                     /* Adjust as needed */
+    z-index: 1000;                   /* Ensure buttons are on top */
+}
     
+
+
