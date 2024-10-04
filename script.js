@@ -29,65 +29,71 @@ function loadContent(page) {
 
 
         shapefiles: `
-            <h2>A. Assemblage et gestion des données > A.1 fichiers de forme</h2>
-            <h3>Approche étape par étape</h3>
-            <p>Cette section explique le flux de travail pour importer et gérer des shapefiles en utilisant R.</p>
+                    <div class="fixed-buttons">
+                        <button class="text-button" onclick="scrollToSection('ÉtapeByÉtape')">Étape par étape</button>
+                        <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
+                    </div>
 
-            <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
-            <p>Avant de commencer, assurez-vous d'avoir installé les packages R requis. Cela peut être fait en utilisant le code suivant :</p>
-            <pre><code>
+        
+                    <h2>A. Assemblage et gestion des données > A.1 fichiers de forme</h2>
+                    <h3>Approche étape par étape</h3>
+                    <p>Cette section explique le flux de travail pour importer et gérer des shapefiles en utilisant R.</p>
+
+                    <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
+                    <p>Avant de commencer, assurez-vous d'avoir installé les packages R requis. Cela peut être fait en utilisant le code suivant :</p>
+                    <pre><code>
 # Installer les bibliothèques nécessaires
 install.packages(c("sf", "ggplot2", "dplyr"))
-            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-            <p>Ce code installe le package <code>sf</code> pour manipuler des données spatiales, <code>ggplot2</code> pour la visualisation des données et <code>dplyr</code> pour la manipulation des données.</p>
+                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+                    <p>Ce code installe le package <code>sf</code> pour manipuler des données spatiales, <code>ggplot2</code> pour la visualisation des données et <code>dplyr</code> pour la manipulation des données.</p>
 
-            <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
-            <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement R :</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+                    <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
+                    <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement R :</p>
+                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
 # Charger les bibliothèques nécessaires
 library(sf)
 library(dplyr)
 library(ggplot2)
-            </code></pre>
-            <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
+                    </code></pre>
+                    <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
 
-            <h3>Étape 3 : Importer des Shapefiles</h3>
-            <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>st_read</code> du package <code>sf</code>. Voici une fonction pour le faire :</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+                    <h3>Étape 3 : Importer des Shapefiles</h3>
+                    <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>st_read</code> du package <code>sf</code>. Voici une fonction pour le faire :</p>
+                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
 # Importer des Shapefiles
 import_shapefile <- function(filepath) {
     shapefile <- st_read(filepath)  # Lire le shapefile
     return(shapefile)  # Retourner le shapefile chargé
 }
-            </code></pre>
-            <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le renvoie en tant qu'objet spatial.</p>
+                    </code></pre>
+                    <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le renvoie en tant qu'objet spatial.</p>
 
-            <h3>Étape 4 : Renommer et faire correspondre les noms</h3>
-            <p>Parfois, les colonnes de votre shapefile doivent être renommées pour plus de clarté ou pour correspondre à d'autres ensembles de données. Vous pouvez le faire comme suit :</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+                    <h3>Étape 4 : Renommer et faire correspondre les noms</h3>
+                    <p>Parfois, les colonnes de votre shapefile doivent être renommées pour plus de clarté ou pour correspondre à d'autres ensembles de données. Vous pouvez le faire comme suit :</p>
+                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
 # Renommer et faire correspondre les noms
 rename_shapefile_columns <- function(shapefile, new_names) {
     colnames(shapefile) <- new_names  # Renommer les colonnes
     return(shapefile)  # Retourner le shapefile renommé
 }
-            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-            <p>Cette fonction prend un shapefile et un vecteur de nouveaux noms, renommant les colonnes en conséquence.</p>
+                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+                    <p>Cette fonction prend un shapefile et un vecteur de nouveaux noms, renommant les colonnes en conséquence.</p>
 
-            <h3>Étape 5 : Lier les Shapefiles aux Échelles Pertinentes</h3>
-            <p>Liez votre shapefile à des échelles ou des métadonnées pertinentes en le fusionnant avec un autre cadre de données :</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+                    <h3>Étape 5 : Lier les Shapefiles aux Échelles Pertinentes</h3>
+                    <p>Liez votre shapefile à des échelles ou des métadonnées pertinentes en le fusionnant avec un autre cadre de données :</p>
+                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
 # Lier les Shapefiles aux Échelles Pertinentes
 link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
     linked_shapefile <- shapefile %>%
         left_join(scales_df, by = link_col)  # Fusionner le shapefile avec les échelles
     return(linked_shapefile)  # Retourner le shapefile lié
 }
-            </code></pre>
-            <p>Cette fonction effectue une jointure à gauche entre le shapefile et un cadre de données contenant des informations sur les échelles, en fonction d'une colonne de liaison spécifiée.</p>
+                    </code></pre>
+                    <p>Cette fonction effectue une jointure à gauche entre le shapefile et un cadre de données contenant des informations sur les échelles, en fonction d'une colonne de liaison spécifiée.</p>
 
-            <h3>Étape 6 : Visualiser les Shapefiles et Créer des Cartes de Base</h3>
-            <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>ggplot2</code>. Voici une fonction pour cela :</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+                    <h3>Étape 6 : Visualiser les Shapefiles et Créer des Cartes de Base</h3>
+                    <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>ggplot2</code>. Voici une fonction pour cela :</p>
+                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
 # Visualiser les Shapefiles et Créer des Cartes de Base
 visualize_shapefile <- function(shapefile) {
     ggplot(data = shapefile) +
@@ -95,12 +101,12 @@ visualize_shapefile <- function(shapefile) {
         theme_minimal() +
         labs(title = "Visualisation du Shapefile", fill = "Variable")  # Définir le titre et la légende
 }
-            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-            <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>some_variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
+                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
+                    <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>some_variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
 
-            <h3>Code complet</h3>
-            <pre id="codeBlock">
-                <code>
+                    <h3>Code complet</h3>
+                    <pre id="codeBlock">
+                    <code>
 
 # Installer les bibliothèques nécessaires
 install.packages(c("sf", "ggplot2", "dplyr"))
@@ -138,7 +144,7 @@ visualize_shapefile <- function(shapefile) {
 }
 
 
-                </code>
+                    </code>
                 <button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici -->
             </pre>
            
