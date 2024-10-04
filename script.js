@@ -1100,7 +1100,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratification>B.1 Reporting Rate per Variable</h3>
+            <h3>B. Stratification épidémiologique.>B.1 Taux de notification par variable</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -1234,7 +1234,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratification>B.2 Group and Merge Data Frame</h3>
+            <h3>B. Stratification épidémiologique.>B.2 Regrouper et fusionner les DataFrame</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -1368,7 +1368,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratification>B.3 Crude Incidence by Year</h3>
+            <h3>B. Stratification épidémiologique.>B.3 Incidence brute par année</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -1503,7 +1503,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratification>B.4 Adjusted Incidence by Year/h3>
+            <h3>B. Stratification épidémiologique.>B.4 Incidence ajustée par année</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -1638,7 +1638,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratefication>B.5 Option to Select Incidence</h3>
+            <h3>B. Stratification épidémiologique.>B.5 Option de sélection de l'incidence</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -1772,7 +1772,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>B. Epidemiological Stratification>B.6 Risk Ctegorization</h3>
+            <h3>B. Stratification épidémiologique.>B.6 Catégorisation des risques"</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
