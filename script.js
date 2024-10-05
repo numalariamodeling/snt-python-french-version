@@ -2443,7 +2443,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.3 CPM (Chimioprévention du paludisme pérenne)</h3>
+            <h3>D. Examen des interventions passées>D.3 CPM (Chimioprévention du paludisme pérenne)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2846,7 +2846,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.6 Couverture, possession, accès, utilisation et type de MII</h3>
+            <h3>D. Examen des interventions passées>D.6 Couverture, possession, accès, utilisation et type de MII</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -2981,7 +2981,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.7 ASP (Aspersion intra-domiciliaire)</h3>
+            <h3>D. Examen des interventions passées>D.7 ASP (Aspersion intra-domiciliaire)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -3117,7 +3117,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.8 Distribution massive de médicaments (DMM)</h3>
+            <h3>D. Examen des interventions passées>D.8 Distribution massive de médicaments (DMM)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -3253,7 +3253,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.9 TPIe (Traitement préventif intermittent du paludisme chez les enfants en âge scolaire)</h3>
+            <h3>D. Examen des interventions passées>D.9 TPIe (Traitement préventif intermittent du paludisme chez les enfants en âge scolaire)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -3389,7 +3389,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>C. Stratification of Other Determinants>D.10 CPMS (Chimioprévention du paludisme post-sortie)</h3>
+            <h3>D. Examen des interventions passées>D.10 CPMS (Chimioprévention du paludisme post-sortie)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -3525,7 +3525,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.11 GSL (Gestion des sources larvaires)</h3>
+            <h3>D. Examen des interventions passées>D.11 GSL (Gestion des sources larvaires)</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
@@ -3661,7 +3661,7 @@ Bloc de code.
                 <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
             </div>
         
-            <h3>D. Review of Past Interventions>D.12 Évaluation de la qualité de la gestion des cas</h3>
+            <h3>D. Examen des interventions passées>D.12 Évaluation de la qualité de la gestion des cas</h3>
             <h3 id="ÉtapeByÉtape">Approche étape par étape</h3>
             <p></p>
 
