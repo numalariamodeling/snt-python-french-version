@@ -6,146 +6,133 @@ function toggleMenu(menuHeader) {
 function loadContent(page) {
     const content = {
         overview: `
-            <h3 class="sidebar-title">Version : 3 octobre 2024 </h3>
-            <h3 class="sidebar-title">Auteurs : Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin </h3>
+            <h3 class="sidebar-title">Version: 3 octobre 2024 </h3>
+            <h3 class="sidebar-title">Auteurs: Mohamed Sillah Kanu, Sammy Oppong, Jaline Gerardin </h3>
             <h2>Aperçu</h2>
             <h3>Motivation</h3>
-            <p>SNT est là pour rester : de nombreux NMCP ont trouvé cela utile et continuent à l'adopter et à le développer davantage pour leurs besoins analytiques. Depuis 2019, plusieurs personnes ont soutenu les parties d'analyse de SNT. Dans la plupart des cas, les individus ont construit leur propre code dans une variété de langages (Stata, R et Python), construisant parfois sur le code précédent d'autres et parfois redéveloppant de manière indépendante.
-            À mesure que SNT mûrit, davantage d'assurance qualité est nécessaire pour que les NMCP puissent être confiants que l'analyse qu'ils utilisent pour éclairer leurs décisions est de haute qualité, quel que soit l'analyste qui les soutient. Le déploiement continu de SNT signifie également que l'analyse peut devenir plus efficace si les analystes sont mieux en mesure de s'appuyer sur le travail des autres plutôt que d'être tentés de réinventer ce qui a déjà été développé. Enfin, l'analyse SNT peut devenir beaucoup plus accessible s'il existe une ressource commune disponible pour aider ceux qui ont des compétences en codage intermédiaires à accéder rapidement aux connaissances collectives de la communauté des analystes SNT.</p>
+            <p>Le SNT est là pour rester : de nombreux PNLP l'ont trouvé utile et continuent de l'adopter et de le développer pour répondre à leurs besoins analytiques. Depuis 2019, plusieurs personnes ont contribué aux parties analytiques du SNT. Dans la plupart des cas, ces individus ont développé leur propre code dans différentes langues (Stata, R, et Python), parfois en s'appuyant sur le code d'autres personnes, parfois en redéveloppant des parties indépendamment.
+           
+À mesure que le SNT mûrit, un contrôle de qualité accru est nécessaire pour que les PNLP puissent être sûrs que les analyses qu'ils utilisent pour prendre des décisions sont de haute qualité, quel que soit l'analyste impliqué. Le déploiement continu du SNT signifie également que l'analyse peut devenir plus efficace si les analystes sont capables de construire sur le travail des autres au lieu de réinventer ce qui a déjà été développé. Enfin, l'analyse du SNT peut devenir beaucoup plus accessible s'il existe une ressource commune permettant à ceux qui possèdent des compétences en codage intermédiaires d'accéder rapidement aux connaissances collectives de la communauté des analystes SNT.
+.</p>
 
             <h3>Objectifs</h3>
-            <p>Nous allons construire une bibliothèque de code pour l'analyse SNT afin de :
+            <p>Nous construirons une bibliothèque de code pour l'analyse SNT afin de :
             <p>1. Améliorer la qualité et la reproductibilité de l'analyse SNT en veillant à ce que les analystes utilisent des approches similaires et correctes.</p>
-            <p>2. Améliorer l'efficacité de l'analyse SNT en minimisant la duplication des efforts.</p>
-            <p>3. Promouvoir l'accessibilité de l'analyse SNT en abaissant les barrières à l'entrée.</p>
+            <p>2. Améliorer l'efficacité de l'analyse SNT en minimisant les efforts en double.</p>
+            <p>3. Promouvoir l'accessibilité de l'analyse SNT en réduisant les obstacles à l'entrée.</p>
+
 
             <h3>Public cible</h3>
-            <p>Quiconque effectuant ce type de travail. Nous supposons une certaine connaissance de base de R, une certaine compréhension des données et un lien solide avec le NMCP.</p>
+            <p>Quiconque fait ce genre de travail. Nous supposons une connaissance de base de Python, une compréhension des données, et un lien étroit avec le PNLP.</p>
+
 
             <h3>Portée</h3>
-            <p>Toutes les étapes d'analyse de SNT jusqu'à, mais n'incluant pas, la modélisation mathématique ; certaines analyses connexes.</p>
-
+            <p>Toutes les étapes d'analyse du SNT jusqu'à, mais sans inclure, la modélisation mathématique ; certaines analyses connexes.</p>
         `,
 
-
         shapefiles: `
-                    <div class="fixed-buttons">
-                        <button class="text-button" onclick="scrollToSection('ÉtapeByÉtape')">Étape par étape</button>
-                        <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
-                    </div>
-
+           
+            <div class="fixed-buttons">
+                <button class="text-button" onclick="scrollToSection('stepByStep')">Étape par étape</button>
+                <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
+            </div>
         
-                    <h3>A. Assemblage et gestion des données > A.1 fichiers de forme</h3>
-                    <h3>Approche étape par étape</h3>
-                    <p>Cette section explique le flux de travail pour importer et gérer des shapefiles en utilisant R.</p>
+            <h3>A. Assemblage et gestion des données>A.1 Fichiers Shapefiles</h3>
+            <h3 id="stepByStep">Approche étape par étape</h3>
+            <p>Cette section explique le flux de travail d'importation et de gestion des shapefiles avec Python.</p>
 
-                    <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
-                    <p>Avant de commencer, assurez-vous d'avoir installé les packages R requis. Cela peut être fait en utilisant le code suivant :</p>
-                    <pre><code>
+            <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
+            <p>Avant de commencer, assurez-vous que vous avez installé les packages Python nécessaires.</p>
+            <p>Cela peut être fait en utilisant le code suivant :</p>
+            <pre><code>
 # Installer les bibliothèques nécessaires
-install.packages(c("sf", "ggplot2", "dplyr"))
-                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-                    <p>Ce code installe le package <code>sf</code> pour manipuler des données spatiales, <code>ggplot2</code> pour la visualisation des données et <code>dplyr</code> pour la manipulation des données.</p>
 
-                    <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
-                    <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement R :</p>
-                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
+pip install geopandas matplotlib pandas      
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
+            <p>Ce code installe le package <code>geopandas</code> pour manipuler les données spatiales, <code>matplotlib</code> pour la visualisation de données, et <code>pandas</code> pour la manipulation de données.</p>
+            <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
+            <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement Python :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Charger les bibliothèques nécessaires
-library(sf)
-library(dplyr)
-library(ggplot2)
-                    </code></pre>
-                    <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour utilisation dans votre script.</p>
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
+            </code></pre>
+            <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour votre script.</p>
+            <h3>Étape 3 : Importer les shapefiles</h3>
+            <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>read_file</code> du package <code>geopandas</code>. Voici une fonction pour le faire :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
+# Importer des shapefiles
+def import_shapefile(filepath):
+    shapefile = gpd.read_file(filepath)  # Lire le shapefile
+    return shapefile  # Retourner le shapefile chargé
+            </code></pre>
+            <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le retourne comme un objet spatial.</p>
+            <h3>Étape 4 : Renommer et correspondre les noms</h3>
+            <p>Parfois, les colonnes de votre shapefile peuvent devoir être renommées pour plus de clarté ou pour correspondre à d'autres jeux de données. Vous pouvez le faire ainsi :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
+# Renommer et correspondre les noms
+def rename_shapefile_columns(shapefile, new_names):
+    shapefile.columns = new_names  # Renommer les colonnes
+    return shapefile  # Retourner le shapefile renommé
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
+            <p>Cette fonction prend un shapefile et une liste de nouveaux noms, renommant les colonnes en conséquence.</p>
 
-                    <h3>Étape 3 : Importer des Shapefiles</h3>
-                    <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>st_read</code> du package <code>sf</code>. Voici une fonction pour le faire :</p>
-                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
-# Importer des Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Lire le shapefile
-    return(shapefile)  # Retourner le shapefile chargé
-}
-                    </code></pre>
-                    <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le renvoie en tant qu'objet spatial.</p>
+            <h3>Étape 5 : Lier les shapefiles aux échelles pertinentes</h3>
+            <p>Liez votre shapefile aux échelles ou métadonnées pertinentes en le fusionnant avec un autre DataFrame :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
+# Lier les shapefiles aux échelles pertinentes
+def link_shapefiles_to_scales(shapefile, scales_df, link_col):
+    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Fusionner le shapefile avec les échelles
+    return linked_shapefile  # Retourner le shapefile lié
+            </code></pre>
+            <p>Cette fonction effectue une fusion entre le shapefile et un DataFrame contenant les informations d'échelle basées sur une colonne de liaison spécifiée.</p>
 
-                    <h3>Étape 4 : Renommer et faire correspondre les noms</h3>
-                    <p>Parfois, les colonnes de votre shapefile doivent être renommées pour plus de clarté ou pour correspondre à d'autres ensembles de données. Vous pouvez le faire comme suit :</p>
-                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
-# Renommer et faire correspondre les noms
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Renommer les colonnes
-    return(shapefile)  # Retourner le shapefile renommé
-}
-                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-                    <p>Cette fonction prend un shapefile et un vecteur de nouveaux noms, renommant les colonnes en conséquence.</p>
+            <h3>Étape 6 : Visualiser les shapefiles et créer des cartes de base</h3>
+            <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>matplotlib</code> et <code>geopandas</code>. Voici une fonction pour cela :</p>
+            <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
+# Visualiser les shapefiles et créer des cartes de base
+def visualize_shapefile(shapefile, variable):
+    shapefile.plot(column=variable, cmap='viridis', legend=True)
+    plt.title(f'Visualisation du shapefile : {variable}')
+    plt.show()
+            </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
+            <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
 
-                    <h3>Étape 5 : Lier les Shapefiles aux Échelles Pertinentes</h3>
-                    <p>Liez votre shapefile à des échelles ou des métadonnées pertinentes en le fusionnant avec un autre cadre de données :</p>
-                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
-# Lier les Shapefiles aux Échelles Pertinentes
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Fusionner le shapefile avec les échelles
-    return(linked_shapefile)  # Retourner le shapefile lié
-}
-                    </code></pre>
-                    <p>Cette fonction effectue une jointure à gauche entre le shapefile et un cadre de données contenant des informations sur les échelles, en fonction d'une colonne de liaison spécifiée.</p>
-
-                    <h3>Étape 6 : Visualiser les Shapefiles et Créer des Cartes de Base</h3>
-                    <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>ggplot2</code>. Voici une fonction pour cela :</p>
-                    <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --><code>
-# Visualiser les Shapefiles et Créer des Cartes de Base
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualiser le shapefile
-        theme_minimal() +
-        labs(title = "Visualisation du Shapefile", fill = "Variable")  # Définir le titre et la légende
-}
-                    </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici --></pre>
-                    <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>some_variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
-
-                    <h3>Code complet</h3>
-                    <pre id="codeBlock">
-                    <code>
-
+            <h3 id="fullCode">Code complet</h3>
+          
+            <pre id="codeBlock">
+                <code>
 # Installer les bibliothèques nécessaires
-install.packages(c("sf", "ggplot2", "dplyr"))
+pip install geopandas matplotlib pandas
 
 # Charger les bibliothèques nécessaires
-library(sf)
-library(dplyr)
-library(ggplot2)
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Importer des Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Lire le shapefile
-    return(shapefile)  # Retourner le shapefile chargé
-}
+# Importer des shapefiles
+def import_shapefile(filepath):
+    shapefile = gpd.read_file(filepath)  # Lire le shapefile
+    return shapefile  # Retourner le shapefile chargé
 
-# Renommer et faire correspondre les noms
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Renommer les colonnes
-    return(shapefile)  # Retourner le shapefile renommé
-}
+# Renommer et correspondre les noms
+def rename_shapefile_columns(shapefile, new_names):
+    shapefile.columns = new_names  # Renommer les colonnes
+    return shapefile  # Retourner le shapefile renommé
 
-# Lier les Shapefiles aux Échelles Pertinentes
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Fusionner le shapefile avec les échelles
-    return(linked_shapefile)  # Retourner le shapefile lié
-}
+# Lier les shapefiles aux échelles pertinentes
+def link_shapefiles_to_scales(shapefile, scales_df, link_col):
+    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Fusionner le shapefile avec les échelles
+    return linked_shapefile  # Retourner le shapefile lié
 
-# Visualiser les Shapefiles et Créer des Cartes de Base
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualiser le shapefile
-        theme_minimal() +
-        labs(title = "Visualisation du Shapefile", fill = "Variable")  # Définir le titre et la légende
-}
-
-
-                    </code>
-                <button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Le bouton de copie est positionné ici -->
+# Visualiser les shapefiles et créer des cartes de base
+def visualize_shapefile(shapefile, variable):
+    shapefile.plot(column=variable, cmap='viridis', legend=True)
+    plt.title(f'Visualisation du shapefile : {variable}')
+    plt.show()
+                </code>
+                <button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here -->
             </pre>
            
         `,
