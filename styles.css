@@ -81,14 +81,12 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: lightgray;
+    background-color: #f0f0f0;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
     width: 700px;
-    
-    
-    
+    color: black;    
 }
 
 
@@ -115,11 +113,12 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
     border-radius: 4px;
     cursor: pointer;
+    border: 2px solid black; /* White border around the menu item */
+    
 }
 
 button {
@@ -137,14 +136,19 @@ button {
 }
 
 .menu-link {
-    color: blue;
+    color: black;
     text-decoration: none; /* This removes the underline */    
+    
 }
 
 
-
 .menu-link.selected {
-    color: red; /* Color when selected */
+    color: black; /* Color when selected */
+    background-color: #F2F2F3; /* White background for the rectangular bar */
+    border: 2px solid black; /* White border around the menu item */
+    padding: 5px 10px; /* Padding to make the border look like a rectangular bar */
+    border-radius: 4px; /* Optional: Rounded corners */
+    
 }
 
 
@@ -181,8 +185,8 @@ button {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: blue;                     /* Make the text blue */
-    text-decoration: underline;       /* Underline text */
+    color: black;                     /* Make the text blue */
+    text-decoration: none;       /* Underline text */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
@@ -209,5 +213,3 @@ button {
     z-index: 1000;                   /* Ensure buttons are on top */
 }
     
-
-
