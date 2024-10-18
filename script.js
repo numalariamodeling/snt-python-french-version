@@ -160,10 +160,26 @@ def visualize_shapefile(shapefile, variable):
     document.getElementById('content').innerHTML = content[page];
 }
 
-// Load the overview content when the page opens
 window.onload = function() {
-    loadContent('overview');
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    // Example 1: Load 'overview' if URL contains '#Overview'
+    if (currentUrl.includes('#Overview')) {
+        loadContent('overview');
+    }
+
+    // Example 2: Load 'shapefiles' if URL contains '#Shapefiles'
+    if (currentUrl.includes('#shapefiles')) {
+        loadContent('shapefiles');
+    }
+
+    // Example 3: Load 'data-management' if URL contains '#DataManagement'
+    if (currentUrl.includes('#hf')) {
+        loadContent('hf');
+    }
 };
+
 
 // Scroll to the relevant section when buttons are clicked
 function scrollToSection(sectionId) {
@@ -183,8 +199,6 @@ function copyCode() {
     });
 }
 
-
-
 document.querySelector('.search-bar').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const menuItems = document.querySelectorAll('.menu-link, .menu-header');
@@ -199,8 +213,6 @@ document.querySelector('.search-bar').addEventListener('input', function() {
     });
 });
 
-
-
 // Function to handle link selection
 function selectLink(selectedLink) {
     // Remove 'selected' class from all links
@@ -211,8 +223,6 @@ function selectLink(selectedLink) {
     // Add 'selected' class to the clicked link
     selectedLink.classList.add('selected');
 }
-
-
 
 function toggleMenu(menuHeader) {
     var submenu = menuHeader.nextElementSibling; // Get the submenu
@@ -225,7 +235,28 @@ function toggleMenu(menuHeader) {
     }
 }
 
+// Add styles for rectangular buttons
+const styles = `
+    .rect-buttons {
+        display: flex;
+        gap: 10px; /* Adds space between the buttons */
+        margin-top: 10px;
+    }
 
+    .rect-button {
+        width: 100px;  /* Set width to make the button rectangular */
+        height: 40px;  /* Set height for better visibility */
+        border-radius: 5px; /* Small radius for slightly rounded corners, or set to 0 for sharp edges */
+        border: none;
+        background-color: #47B5FF;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+    }
+`;
 
-
-
+// Inject styles into the document head
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
