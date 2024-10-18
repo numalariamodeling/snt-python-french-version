@@ -45,9 +45,16 @@ function loadContent(page) {
             <p><em>Cette section explique le flux de travail d'importation et de gestion des shapefiles avec Python.</em></p>
 
 
-            
+            <div class="round-buttons">
+                <button class="rect-button" onclick="window.location.href='https://';">Vue R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://';">Vue py EN</button>
+                <button class="rect-button" onclick="window.location.href='https://';">Vue R En</button>
 
-            <h3>Étape 1 : Installer les bibliothèques nécessaires</h3>
+            </div>
+           
+            <h4 id="stepByStep">Étape par étape</h4>
+            <h5 style="color: #ADD8E6;">Étape 1 : Installer les bibliothèques nécessaires</h5>
+            
             <p>Avant de commencer, assurez-vous que vous avez installé les packages Python nécessaires.</p>
             <p>Cela peut être fait en utilisant le code suivant :</p>
             <pre><code>
@@ -56,7 +63,7 @@ function loadContent(page) {
 pip install geopandas matplotlib pandas      
             </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
             <p>Ce code installe le package <code>geopandas</code> pour manipuler les données spatiales, <code>matplotlib</code> pour la visualisation de données, et <code>pandas</code> pour la manipulation de données.</p>
-            <h3>Étape 2 : Charger les bibliothèques nécessaires</h3>
+            <h5 style="color: #ADD8E6;">Étape 2 : Charger les bibliothèques nécessaires</h5>
             <p>Après avoir installé les bibliothèques, vous devez les charger dans votre environnement Python :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Charger les bibliothèques nécessaires
@@ -65,7 +72,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
             </code></pre>
             <p>Cette étape rend les fonctions de ces bibliothèques disponibles pour votre script.</p>
-            <h3>Étape 3 : Importer les shapefiles</h3>
+            <h5 style="color: #ADD8E6;">Étape 3 : Importer les shapefiles</h5>
             <p>Vous pouvez importer des shapefiles en utilisant la fonction <code>read_file</code> du package <code>geopandas</code>. Voici une fonction pour le faire :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Importer des shapefiles
@@ -74,7 +81,7 @@ def import_shapefile(filepath):
     return shapefile  # Retourner le shapefile chargé
             </code></pre>
             <p>Cette fonction prend un chemin de fichier en entrée, lit le shapefile et le retourne comme un objet spatial.</p>
-            <h3>Étape 4 : Renommer et correspondre les noms</h3>
+            <h5 style="color: #ADD8E6;">Étape 4 : Renommer et correspondre les noms</h5>
             <p>Parfois, les colonnes de votre shapefile peuvent devoir être renommées pour plus de clarté ou pour correspondre à d'autres jeux de données. Vous pouvez le faire ainsi :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Renommer et correspondre les noms
@@ -84,7 +91,7 @@ def rename_shapefile_columns(shapefile, new_names):
             </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
             <p>Cette fonction prend un shapefile et une liste de nouveaux noms, renommant les colonnes en conséquence.</p>
 
-            <h3>Étape 5 : Lier les shapefiles aux échelles pertinentes</h3>
+            <h5 style="color: #ADD8E6;">Étape 5 : Lier les shapefiles aux échelles pertinentes</h5>
             <p>Liez votre shapefile aux échelles ou métadonnées pertinentes en le fusionnant avec un autre DataFrame :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Lier les shapefiles aux échelles pertinentes
@@ -94,7 +101,7 @@ def link_shapefiles_to_scales(shapefile, scales_df, link_col):
             </code></pre>
             <p>Cette fonction effectue une fusion entre le shapefile et un DataFrame contenant les informations d'échelle basées sur une colonne de liaison spécifiée.</p>
 
-            <h3>Étape 6 : Visualiser les shapefiles et créer des cartes de base</h3>
+            <h5 style="color: #ADD8E6;">Étape 6 : Visualiser les shapefiles et créer des cartes de base</h5>
             <p>Enfin, vous pouvez visualiser le shapefile en utilisant <code>matplotlib</code> et <code>geopandas</code>. Voici une fonction pour cela :</p>
             <pre><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --><code>
 # Visualiser les shapefiles et créer des cartes de base
@@ -105,7 +112,7 @@ def visualize_shapefile(shapefile, variable):
             </code><button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here --></pre>
             <p>Cette fonction crée une simple visualisation cartographique en utilisant les données spatiales. Remplacez <code>variable</code> par le nom de la variable que vous souhaitez visualiser dans l'esthétique de remplissage.</p>
 
-            <h3 id="fullCode">Code complet</h3>
+            <h4 id="fullCode">Code complet</h4>
           
             <pre id="codeBlock">
                 <code>
@@ -141,7 +148,7 @@ def visualize_shapefile(shapefile, variable):
                 <button class="copy-button" onclick="copyCode()">Copier le code</button> <!-- Copy button positioned here -->
             </pre>
 
-            <h3 id="sampleR">Exemple de sortie</h3>
+            <h4 id="sampleR">Exemple de sortie</h4>
             <img src="https://raw.githubusercontent.com/numalariamodeling/snt-code-library-english-version/a204dc53be5209fc170acbfbb5db8900930a80fa/MAP_PYTHON.png" alt="Sample Results">;
            
         `,
