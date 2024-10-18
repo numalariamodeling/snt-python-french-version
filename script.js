@@ -46,9 +46,9 @@ function loadContent(page) {
 
 
             <div class="round-buttons">
-                <button class="rect-button" onclick="window.location.href='https://';">Vue R FR</button>
-                <button class="rect-button" onclick="window.location.href='https://';">Vue py EN</button>
-                <button class="rect-button" onclick="window.location.href='https://';">Vue R En</button>
+                <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-code-library-french-version/#shapefiles';">Vue R FR</button>
+                <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-python-english-version/#shapefiles';">Vue py EN</button>
+                <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-code-library-english-version/#shapefiles';">Vue R En</button>
 
             </div>
            
