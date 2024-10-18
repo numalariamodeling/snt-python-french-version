@@ -1,45 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Hubot Sans', sans-serif; /* Changed to Hubot Sans */
     margin: 0;
     display: flex;
+    height: 100vh; /* Set the body to take up the full viewport height */
+    overflow: hidden; /* Prevent scrolling on body */
 }
 
 .container {
     display: flex;
-    align-items: stretch;
-    height: 100vh;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-
-
 .sidebar {
-    width: 33.33%; 
+    width: 25%; /* Sidebar takes 25% of the page */
     background-color: white; /* Sidebar color */
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
-    overflow-y: auto; /* Add scroll functionality */
+    overflow-y: auto; /* Allow vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    max-height: 100vh; /* Restrict height to viewport height */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
-.sidebar-header {
+.sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+/* Sidebar button grid (2x2) styling */
+.sidebar-button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    grid-gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below button grid */
+}
+
+.sidebar-button {
+    background-color: #003366; /* Dark blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    cursor: pointer;
     text-align: center;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    underline: none;
 }
 
-.sidebar-logo {
-    width: 80%;
+
+
+.sidebar-search-container {
+    flex: 0 0 25%; /* Set to take 25% of sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add spacing below the container */
 }
 
 .search-bar {
-    width: 90%; /* Shortened the width of the search bar */
+    width: 95%; /* Full width within the container */
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+/* Sidebar content styling */
+.sidebar-content {
+    flex: 0 0 75%; /* The rest of the sidebar (75%) is for other elements */
+}
+
+.ren-button {
+    background-color: #47B5FF; /* Light blue background for R En button */
+}
 
 
 .menu {
@@ -50,6 +87,7 @@ body {
     list-style-type: none;
     padding: 0;
     display: none;
+    padding-left: 20px; /* Indentation for submenu items */
 }
 
 .submenu li {
@@ -57,55 +95,71 @@ body {
 }
 
 .menu-header {
-    cursor: pointer;
-    font-weight: bold;
-
-
-
+    cursor: pointer; /* Change cursor to pointer for better UX */
     display: flex;
     justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
     align-items: center; /* Vertically aligns the text and the indicator */
     background-color: transparent;
 }
 
-
-.main-content {
-    
-    padding: 20px;
-    overflow-y: auto; /* Allows scrolling for main content */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    height: 100vh; /* Ensure full height for the main content */
-    width: 66.67%;
-    display: flex; /* use flexbox */
+.menu-indicator {
+    font-size: 18px;
+    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
+    color: black;
 }
 
-/* Style for the code block */
+.menu-link {
+    color: black;
+    text-decoration: none; /* This removes the underline */
+}
+
+.menu-link.selected {
+    color: #47B5FF; /* Color when selected */
+}
+
+.main-content-container {
+    display: flex;
+    flex-direction: row;
+    width: 70%; /* This contains both the main content and the empty space on the right */
+    box-sizing: border-box;
+    padding-left: 0; /* No padding directly here to allow better control inside the main content */
+    gap: 5%; /* Leave a 5% space between the sidebar and the main content */
+}
+
+.main-content {
+    width: 60%; /* Main content takes up 60% of the total width */
+    padding: 20px;
+    overflow-y: scroll; /* Allow vertical scrolling for main content */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack content vertically */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    height: 100%;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    margin-left: 5%; /* Add 5% space between the sidebar and the main content */
+}
+
+.main-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+}
+
+/* Main content elements take 60% of the available space */
+.main-content-block {
+    flex: 0 0 60%;
+    margin-bottom: 20px; /* Add spacing between elements */
+}
+
+.right-empty-space {
+    width: 5%; /* Empty space on the right of the main content */
+}
+
 pre {
     background-color: #f0f0f0;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
-    width: 700px;
+    width: 100%; /* Ensure pre elements take up the space as needed */
     color: black;    
-}
-
-
-/* Apply to all paragraphs before or after the <pre> block */
-pre + p,
-pre ~ p,
-p + pre,
-p ~ pre {
-    width: 700px;
-    margin:10px 0;
-}
-
-/* Apply to all headings before or after the <pre> block */
-pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
-pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
-h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
-h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
-    width: 700px;
-    margin:10px 0;
 }
 
 .copy-button {
@@ -113,97 +167,34 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: white;
+    background-color: #47B5FF;
     color: black;
     border-radius: 4px;
     cursor: pointer;
-    border: 2px solid black; /* White border around the menu item */
-    
+    border: 2px solid black;
 }
-
-button {
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.parent{
-    height: 100vh;
-
-}
-
-.sidebar, .main-content {
-    height:100%;
-}
-
-.menu-link {
-    color: black;
-    text-decoration: none; /* This removes the underline */    
-    
-}
-
-
-.menu-link.selected {
-    color: black; /* Color when selected */
-    background-color: #F2F2F3; /* White background for the rectangular bar */
-    border: 2px solid black; /* White border around the menu item */
-    padding: 5px 10px; /* Padding to make the border look like a rectangular bar */
-    border-radius: 4px; /* Optional: Rounded corners */
-    
-}
-
-
-.menu-header {
-    cursor: pointer; /* Change cursor to pointer for better UX */
-}
-
-.menu-indicator {
-    margin-right: 5px; /* Space between indicator and text */
-}
-
-.submenu {
-    padding-left: 20px; /* Indentation for submenu items */
-}
-
-
-.menu-indicator {
-    /* You can customize the indicator's styles here */
-    font-weight: bold; /* Make the indicator bold (optional) */
-    color: black;
-}
-
-
-.menu-header .menu-indicator {
-    font-size: 18px;
-    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
-}
-
-
-
-
-
 
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: black;                     /* Make the text blue */
-    text-decoration: none;       /* Underline text */
+    color: black;                    /* Make the text black */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
     margin-right: 10px;              /* Space between buttons */
+    text-align: left; 
 }
 
-.text-button:last-child {
-    margin-right: 0;                 /* No margin on the last button */
+
+.text-button.selected {
+    color: #47B5FF; /* Color when selected */
 }
 
 .text-button:hover {
-    color: darkblue;                 /* Darker shade when hovering */
-    text-decoration: none;           /* Remove underline on hover */
+    color: #47B5FF; /* Color when selected */
 }
 
 .fixed-buttons {
-
     display: flex;         /* Use flexbox layout */
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px;  
@@ -212,4 +203,59 @@ button {
     right: 20px;                     /* Adjust as needed */
     z-index: 1000;                   /* Ensure buttons are on top */
 }
+
+/* Apply to all paragraphs before or after the <pre> block */
+pre + p,
+pre ~ p,
+p + pre,
+p ~ pre {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Apply to all headings before or after the <pre> block */
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + h6,
+pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
+h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
+    width: 100%;
+    margin: 20px 0;
+}
+
+button {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.parent {
+    height: 100vh;
+}
+
+.sidebar, .main-content {
+    height: 100%;
+}
+
+/* Add media queries for better responsiveness */
+@media (min-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
     
+    .sidebar {
+        width: 25%;
+    }
+    
+    .main-content {
+        max-width: 1400px; /* Increase the maximum width on larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 35%;
+    }
+    
+    .main-content {
+        padding: 10px;
+    }
+}
