@@ -34,10 +34,10 @@ function loadContent(page) {
 
            
             <div class="fixed-buttons">
-                <button class="text-button">Sur cette page:</button>
-                <button class="text-button" onclick="scrollToSection('stepByStep')">Étape par étape</button>
-                <button class="text-button" onclick="scrollToSection('sampleR')">Exemple de sortie</button>
-                <button class="text-button" onclick="scrollToSection('fullCode')">Code complet</button>
+
+                <button class="text-button" data-section="stepByStep" onclick="scrollToSection('stepByStep')">Step-by-step</button>
+                <button class="text-button" data-section="fullCode" onclick="scrollToSection('fullCode')">Full code</button>
+                <button class="text-button" data-section="sampleR" onclick="scrollToSection('sampleR')">Sample results</button>
             </div>
         
             <h5>Assemblage et gestion des données/Fichiers</h5>
