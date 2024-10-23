@@ -194,14 +194,23 @@ pre {
     color: #47B5FF; /* Color when selected */
 }
 
+.text-button.scrolled {
+    color: #47B5FF; /* Change text color */
+}
+
 .fixed-buttons {
     display: flex;         /* Use flexbox layout */
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px;  
-    position: fixed;                 /* Keep buttons fixed */
+    position: absolute;                 /* Keep buttons fixed */
     top: 10px;                       /* Adjust as needed */
     right: 20px;                     /* Adjust as needed */
     z-index: 1000;                   /* Ensure buttons are on top */
+    transition: top 0.3s ease;  /* Smooth transition effect */
+}
+
+.fixed-buttons.scrolled {
+    color: #47B5FF; /* Change text color */
 }
 
 /* Apply to all paragraphs before or after the <pre> block */
@@ -233,6 +242,17 @@ button {
 
 .sidebar, .main-content {
     height: 100%;
+}
+
+
+.fixed-buttons .text-button.active {
+    color: #47B5FF;
+}
+
+
+.fixed-buttons .text-button {
+    color: black; /* Default color */
+    transition: color 0.3s ease;
 }
 
 /* Add media queries for better responsiveness */
